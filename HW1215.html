@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Number Guessing Game</title>
+</head>
+
+<body>
+
+<script>
+  var rand = Math.floor(Math.random() * 10) + 1;
+  var guess = 0;
+
+  while (guess !== rand) {
+    guess = parseInt(window.prompt("Guess the number between 1 and 10:"));
+
+    if (isNaN(guess)) {
+      alert("Please enter a valid number!");
+    } else if (guess < 1 || guess > 10) {
+      alert("Please enter a number between 1 and 10!");
+    } else if (guess < rand) {
+      alert("Too low! Try again.");
+    } else if (guess > rand) {
+      alert("Too high! Try again.");
+    } else {
+      alert("Congratulations! You guessed the correct number: " + rand);
+    }
+  }
+
+  // Now that the game is over, display the welcome message
+  document.writeln('Welcome! You got the answer right. The answer is: ' + rand);
+</script>
+
+</body>
+
+</html>
